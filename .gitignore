@@ -1,5 +1,11 @@
 HELP.md
 /target/
+/src/test/
+bin/
+/bin
+debug/*.obj
+**/foo
+*.log
 !.mvn/wrapper/maven-wrapper.jar
 
 ### STS ###
