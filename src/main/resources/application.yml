@@ -1,0 +1,25 @@
+# 类似于.properties server.port = 8080
+server:
+  port:8080
+name: 我是张三
+age: 22
+student:
+  name: 李四
+  age: 20
+  
+logging:
+  path: /user/local/log
+  level:
+    com:
+      favorites: DEBUG
+    org:
+      springframework:
+        web: INFO
+      hibernate: ERROR
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/test
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
