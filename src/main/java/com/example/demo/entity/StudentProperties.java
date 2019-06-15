@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 /**
  * @author ml
  * @version 创建时间：2019年3月25日
- * 类说明
+ * 类说明： 自定义 Property，注解@ConfigurationProperties(prefix = "student")
  */
 @Component
 @ConfigurationProperties(prefix = "student")
@@ -15,7 +15,7 @@ public class StudentProperties {
 	private String name;
 	
 	private Integer age;
-
+	
 	public String getName() {
 		return name;
 	}
