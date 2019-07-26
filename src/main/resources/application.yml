@@ -8,6 +8,7 @@ student:
   
 logging:
   path: /user/local/log
+  file: springbootdemo.log
   level:
     com:
       favorites: DEBUG
