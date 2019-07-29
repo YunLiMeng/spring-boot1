@@ -44,6 +44,7 @@ public class RedisConfig extends CachingConfigurerSupport {
                 	// 由于参数可能不同, hashCode肯定不一样, 缓存的key也需要不一样
                     sb.append(obj.toString());
                 }
+                //  这是我注释的一行代码
                 return sb.toString();
 			}
         };
