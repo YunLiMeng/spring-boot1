@@ -3,6 +3,7 @@ package com.example.demo.web.controller;
 import java.util.List;
 import java.util.Map;
 
+import com.example.demo.common.ResponseMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,11 +40,9 @@ public class StudentController {
     }
     
     @RequestMapping("/getAllStudent")
-    public List<Map<String, Object>> getAllStudent() {
-    	System.out.println("----------------");
+    public ResponseMessage getAllStudent() {
     	List<Map<String, Object>> students = studentService.getAllStudent();
-    	
-    	return students;
+    	return ResponseMessage.Success(students);
     }
     
     
