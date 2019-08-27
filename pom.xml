@@ -118,6 +118,14 @@
 			<version>2.6.1</version>
 		</dependency>
 		<!-- spring boot中redis的使用 end -->
+
+		<!--mybatis-plus-->
+		<dependency>
+			<groupId>com.baomidou</groupId>
+			<artifactId>mybatis-plus</artifactId>
+			<version>3.2.0</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -126,9 +134,9 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			<configuration>
-				<fork>true</fork>
-			</configuration>
+<!--			<configuration>-->
+<!--				<fork>true</fork>-->
+<!--			</configuration>-->
 		</plugins>
 	</build>
 
