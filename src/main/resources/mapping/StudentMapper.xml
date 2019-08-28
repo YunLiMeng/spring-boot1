@@ -5,5 +5,9 @@
   <select id="getAllStudent" resultType="java.util.Map">
   	 select * from student
   </select>
-  
+
+  <select id="studentList" resultType="com.example.demo.entity.Student">
+  	 select * from student
+  </select>
+
 </mapper>

@@ -29,3 +29,7 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
+#mybatis-plus
+mybatis-plus:
+  mapper-locations: classpath*:/mapping/*.xml
+  type-aliases-package: com.example.demo.entity

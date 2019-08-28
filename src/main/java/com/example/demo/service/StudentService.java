@@ -3,6 +3,9 @@ package com.example.demo.service;
 import java.util.List;
 import java.util.Map;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.example.demo.entity.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,7 +26,8 @@ public class StudentService {
 	 public List<Map<String, Object>> getAllStudent() {
     	System.out.println("----------------");
     	List<Map<String, Object>> students = studentMapper.getAllStudent();
-    	
+    	IPage<Student> page = new Page<>(1,10);
+		 IPage<Student> result = studentMapper.studentList(page);
     	return students;
      }
 }
