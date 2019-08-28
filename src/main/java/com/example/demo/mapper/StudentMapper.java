@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Map;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.example.demo.vo.StudentVo;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
@@ -24,4 +26,6 @@ public interface StudentMapper extends BaseMapper<Student> {
     List<Student> findAll();
     
     List<Map<String,Object>> getAllStudent();
+
+    IPage<StudentVo> studentList(IPage<StudentVo> page);
 }
