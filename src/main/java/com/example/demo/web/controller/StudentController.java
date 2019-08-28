@@ -55,7 +55,7 @@ public class StudentController {
     }
 
     /**
-     * @description：集成mybatis-plus及分页插件demo
+     * @description：集成mybatis-plus及分页插件demo【自定义sql分页】
      * @author: limeng
      * @date: 2019/8/28
      * @param:
@@ -64,6 +64,19 @@ public class StudentController {
     @RequestMapping("/studentList")
     public ResponseMessage studentList() {
         IPage<StudentVo> result = studentService.studentList();
+    	return ResponseMessage.Success(result);
+    }
+
+    /**
+     * @description：baseMapper中自带的分页
+     * @author: limeng
+     * @date: 2019/8/28
+     * @param:
+     * @return: com.example.demo.common.ResponseMessage
+     */
+    @RequestMapping("/studentListPage")
+    public ResponseMessage studentListPage() {
+        IPage<Student> result = studentService.studentListPage();
     	return ResponseMessage.Success(result);
     }
 }
