@@ -9,7 +9,9 @@ import com.example.demo.vo.StudentVo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.entity.Student;
@@ -79,4 +81,19 @@ public class StudentController {
         IPage<Student> result = studentService.studentListPage();
     	return ResponseMessage.Success(result);
     }
+
+    /**
+     * @description：逻辑删除对象信息
+     * @author: limeng
+     * @date: 2019/8/28
+     * @param: studentId
+     * @return: com.example.demo.common.ResponseMessage
+     */
+    @PostMapping("/deletedById")
+    public ResponseMessage deletedById(@RequestParam("studentId") Long studentId) {
+        studentService.deletedById(studentId);
+    	return ResponseMessage.Success(null);
+    }
+
+
 }

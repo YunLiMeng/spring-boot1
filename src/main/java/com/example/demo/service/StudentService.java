@@ -57,4 +57,15 @@ public class StudentService extends ServiceImpl<StudentMapper, Student> {
 //	 	 IPage<StudentVo> list = baseMapper.studentList(page);
     	 return list;
      }
+
+     /**
+      * @description：根据id进行逻辑删除
+      * @author: limeng
+      * @date: 2019/8/28
+      * @param: id
+      * @return: void
+      */
+     public void deletedById(Long id){
+	 	baseMapper.deleteById(id);
+	 }
 }

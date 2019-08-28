@@ -1,9 +1,14 @@
 package com.example.demo.entity;
+
+import com.baomidou.mybatisplus.annotation.TableLogic;
+import lombok.Data;
+
 /**
  * @author ml
  * @version 创建时间：2019年3月25日
  * 类说明
  */
+@Data
 public class Student {
 	
 	private Long id;
@@ -13,9 +18,11 @@ public class Student {
 	private String sex;
 	
 	private String age;
-	
+
+	@TableLogic
+	private byte deleted;
+
 	public Student() {
-		
 	}
 
 	public Student(Long id, String name, String sex, String age) {
@@ -25,35 +32,4 @@ public class Student {
 		this.age = age;
 	}
 
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getSex() {
-		return sex;
-	}
-
-	public void setSex(String sex) {
-		this.sex = sex;
-	}
-
-	public String getAge() {
-		return age;
-	}
-
-	public void setAge(String age) {
-		this.age = age;
-	}
 }

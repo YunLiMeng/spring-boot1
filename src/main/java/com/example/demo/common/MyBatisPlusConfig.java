@@ -1,5 +1,6 @@
 package com.example.demo.common;
 
+import com.baomidou.mybatisplus.core.injector.ISqlInjector;
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,4 +20,10 @@ public class MyBatisPlusConfig {
     public PaginationInterceptor paginationInterceptor() {
         return new PaginationInterceptor();
     }
+
+    // 逻辑删除 3.1.1不需要了
+//    @Bean
+//    public ISqlInjector sqlInjector() {
+//        return new LogicSqlInjector();
+//    }
 }
