@@ -133,6 +133,19 @@
 			<version>1.16.16</version>
 		</dependency>
 
+		<!--excel 导入导出-->
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>4.1.0</version>
+		</dependency>
+
+
 	</dependencies>
 
 	<build>
