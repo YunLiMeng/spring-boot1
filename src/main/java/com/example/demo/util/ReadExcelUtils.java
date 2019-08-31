@@ -2,6 +2,7 @@ package com.example.demo.util;
 
 import cn.hutool.poi.excel.ExcelReader;
 import cn.hutool.poi.excel.ExcelUtil;
+import org.apache.poi.ss.usermodel.Workbook;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.InputStream;
@@ -36,10 +37,11 @@ public class ReadExcelUtils {
    * @description：读EXCEL文件，获取表格信息集合
    * @author: limeng
    * @date: 2019/8/31
-   * @param: mFile
-   * @return: java.util.List<User>
+   * @param: mFile excel文件
+   * @param: sheetIndex 当前第几个表格（sheet）
+   * @return: java.util.List<java.util.List<java.lang.Object>>
    */
-    public static List<List<Object>> readExcelMessage(MultipartFile mFile) {
+    public static List<List<Object>> readExcelMessage(MultipartFile mFile,int sheetIndex) {
         String fileName = mFile.getOriginalFilename();//获取文件名
         List<List<Object>> readers = null;
         try {
@@ -48,7 +50,7 @@ public class ReadExcelUtils {
             }  
             InputStream is = mFile.getInputStream();
             // 读取表格
-            ExcelReader excelReader = ExcelUtil.getReader(is);
+            ExcelReader excelReader = ExcelUtil.getReader(is,sheetIndex);
             readers = excelReader.read();
         } catch (Exception e) {
             e.printStackTrace();  

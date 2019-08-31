@@ -81,13 +81,13 @@ public class StudentService extends ServiceImpl<StudentMapper, Student> {
 	  */
 	 public String importToDb(MultipartFile file){
 		String result = "success";
-		List<List<Object>> readers = ReadExcelUtils.readExcelMessage(file);
+		List<List<Object>> readers = ReadExcelUtils.readExcelMessage(file,1);
 		 for (int i = 0; i < readers.size(); i++) {
 			 // 去掉表头
 			 if (i>0) {
 				 List<Object> data = readers.get(i);
 				 // 验证每行的对应列数是否完整
-				 if(data.size() < 5) {
+				 if(data.size() < 4) {
 					 throw new ServiceException(String.format("导入失败：数据不完整导入失败！请参照模板格式导入！", i + 1));
 				 }
 				 String colum1 = data.get(0).toString();
