@@ -42,15 +42,15 @@ public class CodeGeneration {
         dsc.setDbType(DbType.MYSQL);
         dsc.setDriverName("com.mysql.cj.jdbc.Driver");
         dsc.setUsername("root");
-        dsc.setPassword("root");
-        dsc.setUrl("jdbc:mysql://localhost:3306/ssmdb?serverTimezone=GMT%2B8");
+        dsc.setPassword("");
+        dsc.setUrl("jdbc:mysql://192.168.0.199:3306/pcgl?serverTimezone=GMT%2B8");
         mpg.setDataSource(dsc);
 
         //策略配置
         StrategyConfig strategy = new StrategyConfig();
-        strategy.setTablePrefix(new String[]{});//此处可以修改您的表前缀
+        strategy.setTablePrefix(new String[]{"pcgl_"});//此处可以修改您的表前缀,去除表名的前缀
         strategy.setNaming(NamingStrategy.underline_to_camel);//表名生成策略
-        strategy.setInclude(new String[]{"student"});//需要生成的表
+        strategy.setInclude(new String[]{"pcgl_administrators_information","pcgl_file_information"});//需要生成的表
 
         strategy.setSuperServiceClass(null);
         strategy.setSuperServiceImplClass(null);
