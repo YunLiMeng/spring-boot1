@@ -7,6 +7,7 @@ import java.util.Map;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.example.demo.common.ResponseMessage;
+import com.example.demo.util.ExportExcelUtils;
 import com.example.demo.vo.StudentVo;
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
@@ -14,14 +15,12 @@ import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.example.demo.entity.Student;
 import com.example.demo.mapper.StudentMapper;
 import com.example.demo.service.StudentService;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -174,6 +173,36 @@ public class StudentController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    /**
+     * @description：导出第二版
+     * @author: limeng
+     * @date: 2019/8/31
+     * @param: request
+     * @param: response
+     * @return: void
+     */
+    public void exportExcelv2(HttpServletRequest request,HttpServletResponse response){
+        List<Map<String,Object>> dataList = null;
+        String[] columnNames = {"num","序号","rechargeAccount","成员号码","orderAmount","充值金额（元）",
+                "orderStateDetail","订单状态","createTime","创建时间"};
+        ExportExcelUtils exportUtil = new ExportExcelUtils("手机慢充充值订单列表", columnNames, dataList, request, response);
+    }
+
+    /**
+     * @description：excel导入并入库
+     * @author: limeng
+     * @date: 2019/8/31
+     * @param: file
+     * @param: request
+     * @param: response
+     * @return: java.lang.String
+     */
+    @RequestMapping(value="/upload",method = RequestMethod.POST)
+    @ResponseBody
+    public ResponseMessage importToDb(@RequestParam(value = "file",required = true)MultipartFile file){
+        return ResponseMessage.Success(studentService.importToDb(file));
     }
 
 }
