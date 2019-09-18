@@ -38,6 +38,7 @@ public class CodeGeneration {
         mpg.setGlobalConfig(gc);
 
         //数据源配置
+        // test
         DataSourceConfig dsc = new DataSourceConfig();
         dsc.setDbType(DbType.MYSQL);
         dsc.setDriverName("com.mysql.cj.jdbc.Driver");
