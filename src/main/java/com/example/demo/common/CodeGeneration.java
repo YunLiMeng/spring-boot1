@@ -39,6 +39,7 @@ public class CodeGeneration {
 
         //数据源配置
         // test
+        // test2
         DataSourceConfig dsc = new DataSourceConfig();
         dsc.setDbType(DbType.MYSQL);
         dsc.setDriverName("com.mysql.cj.jdbc.Driver");
