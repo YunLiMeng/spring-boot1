@@ -49,6 +49,8 @@ public class CodeGeneration {
         mpg.setDataSource(dsc);
 
         //策略配置
+
+        // test
         StrategyConfig strategy = new StrategyConfig();
         strategy.setTablePrefix(new String[]{"pcgl_"});//此处可以修改您的表前缀,去除表名的前缀
         strategy.setNaming(NamingStrategy.underline_to_camel);//表名生成策略
