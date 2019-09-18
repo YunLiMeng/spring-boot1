@@ -185,20 +185,6 @@
 			<version>4.0.9</version>
 		</dependency>
 
-		<!-- http 请求 -->
-		<dependency>
-			<groupId>com.squareup.okhttp3</groupId>
-			<artifactId>okhttp</artifactId>
-			<version>3.14.1</version>
-		</dependency>
-
-		<!-- apache httpclient组件 -->
-		<dependency>
-			<groupId>org.apache.httpcomponents</groupId>
-			<artifactId>httpclient</artifactId>
-			<version>4.5.9</version>
-		</dependency>
-
 	</dependencies>
 
 	<build>
