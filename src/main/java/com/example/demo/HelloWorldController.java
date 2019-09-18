@@ -14,6 +14,7 @@ public class HelloWorldController {
 	
 	@RequestMapping("/hello")
 	public String hello(){
+		System.out.println("测试分支合并，从branchtest到master上");
 		return "Hello World.";
 	}
 }
